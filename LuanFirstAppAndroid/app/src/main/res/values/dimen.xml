@@ -6,4 +6,9 @@
     <dimen name="my_view_width">300dp</dimen>
     <dimen name="count_text_size">200sp</dimen>
     <dimen name="counter_height">300dp</dimen>
+
+    <dimen name="padding_regular">16dp</dimen>
+
+    <!-- Giá trị line spacing cho TextView -->
+    <dimen name="line_spacing">8dp</dimen>
 </resources>

@@ -13,8 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int mCount = 0;
-    private TextView mShowCount;
+//    private int mCount = 0;
+//    private TextView mShowCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        mShowCount = findViewById(R.id.show_count); // Find the TextView
+//        mShowCount = findViewById(R.id.show_count); // Find the TextView
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // This method is called when the "Toast" button is clicked
-    public void showToast(View view) {
-        Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show();
-    }
-
-    // This method is called when the "Count" button is clicked
-    public void countUp(View view) {
-        mCount++;
-        if (mShowCount != null) {
-            mShowCount.setText(String.valueOf(mCount));
-        }
-    }
+//    public void showToast(View view) {
+//        Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show();
+//    }
+//
+//    // This method is called when the "Count" button is clicked
+//    public void countUp(View view) {
+//        mCount++;
+//        if (mShowCount != null) {
+//            mShowCount.setText(String.valueOf(mCount));
+//        }
+//    }
 }
