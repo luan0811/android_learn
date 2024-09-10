@@ -1,24 +1,34 @@
+// Activity2.java
 package com.example.luanfirstappandroid;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Activity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_2);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        // Nhận Intent từ MainActivity
+        Intent intent = getIntent();
+
+        // Lấy URI từ Intent bằng getData()
+        Uri webpage = intent.getData();
+        String url = (webpage != null) ? webpage.toString() : "No URL provided";
+
+        // Lấy các extras từ Intent
+        String message = intent.getStringExtra("message");
+        int posX = intent.getIntExtra("EXTRA_POSITION_X", 0);
+        int posY = intent.getIntExtra("EXTRA_POSITION_Y", 0);
+
+        // Hiển thị dữ liệu trong TextView
+        TextView textView = findViewById(R.id.text_view_message);
+        textView.setText("URL: " + url + "\nMessage: " + message +
+                "\nPosition X: " + posX + "\nPosition Y: " + posY);
     }
 }

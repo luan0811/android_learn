@@ -7,4 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".Activity2">
 
+    <!-- activity_2.xml -->
+    <TextView
+        android:id="@+id/text_view_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message will appear here"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
