@@ -8,4 +8,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="myBackgroundColor">#FFF043</color>
+    <color name="purple_500">#6200EE</color>
 </resources>

@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity2">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/white">
 
-    <!-- activity_2.xml -->
-    <TextView
-        android:id="@+id/text_view_message"
+    <!-- Ô nhập liệu để người dùng nhập phản hồi -->
+    <EditText
+        android:id="@+id/editText_reply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your reply"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Nút gửi phản hồi về MainActivity -->
+    <Button
+        android:id="@+id/button_send_reply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message will appear here"
-        tools:ignore="MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Send Reply"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
+        android:onClick="returnReply" />
+</LinearLayout>

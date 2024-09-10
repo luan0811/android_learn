@@ -1,24 +1,35 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/hello_world_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="24sp"
-        android:layout_centerInParent="true" />
-
-    <!-- activity_main.xml -->
+    <!-- Nút để mở Activity2 -->
     <Button
         android:id="@+id/button_open_activity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Activity2"
+        android:text="Open Second Activity"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@android:color/white"
         android:onClick="openActivity2" />
 
-
-</RelativeLayout>
+    <!-- TextView để hiển thị kết quả trả về từ Activity2 -->
+    <TextView
+        android:id="@+id/text_view_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reply will appear here"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:background="@drawable/text_view_background"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

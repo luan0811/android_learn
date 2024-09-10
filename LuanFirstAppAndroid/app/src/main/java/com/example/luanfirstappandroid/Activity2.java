@@ -2,33 +2,34 @@
 package com.example.luanfirstappandroid;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Activity2 extends AppCompatActivity {
+
+    public static final String EXTRA_RETURN_MESSAGE = "com.example.luanfirstappandroid.RETURN_MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
+    }
 
-        // Nhận Intent từ MainActivity
-        Intent intent = getIntent();
+    // Khi người dùng nhấn vào nút gửi phản hồi
+    public void returnReply(View view) {
+        EditText editText = findViewById(R.id.editText_reply);
+        String replyMessage = editText.getText().toString();
 
-        // Lấy URI từ Intent bằng getData()
-        Uri webpage = intent.getData();
-        String url = (webpage != null) ? webpage.toString() : "No URL provided";
+        // Tạo một Intent để chứa dữ liệu phản hồi
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(EXTRA_RETURN_MESSAGE, replyMessage);
 
-        // Lấy các extras từ Intent
-        String message = intent.getStringExtra("message");
-        int posX = intent.getIntExtra("EXTRA_POSITION_X", 0);
-        int posY = intent.getIntExtra("EXTRA_POSITION_Y", 0);
+        // Thiết lập kết quả là OK và gắn kèm Intent
+        setResult(RESULT_OK, replyIntent);
 
-        // Hiển thị dữ liệu trong TextView
-        TextView textView = findViewById(R.id.text_view_message);
-        textView.setText("URL: " + url + "\nMessage: " + message +
-                "\nPosition X: " + posX + "\nPosition Y: " + posY);
+        // Đóng Activity2 và quay về MainActivity
+        finish();
     }
 }
