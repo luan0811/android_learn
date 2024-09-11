@@ -3,9 +3,11 @@ package com.example.luanfirstappandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class Activity2 extends AppCompatActivity {
 
@@ -15,6 +17,26 @@ public class Activity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
+
+        // Thiết lập Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Hiển thị nút mũi tên trở lại
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    // Xử lý sự kiện khi nhấn nút mũi tên
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            // Khi nhấn nút mũi tên, trở về MainActivity
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // Khi người dùng nhấn vào nút gửi phản hồi
